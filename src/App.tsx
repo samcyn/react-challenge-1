@@ -6,12 +6,19 @@ import { TodoItem } from "./components/todo-item";
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const onAddTodo = (todo: Todo) => {
+    setTodos(prev => [
+      ...prev,
+      todo,
+    ]);
+  }
+
   return (
     <>
       <h1>My Todos</h1>
       <section>
         <article>
-          <AddTodoForm />
+          <AddTodoForm onAdd={onAddTodo}/>
         </article>
       </section>
       <section>
