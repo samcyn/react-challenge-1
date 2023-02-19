@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 
 import type { Todo } from "../app.types";
-
 import { convertStringToTags, createId } from "../utils";
+import FieldInput from './field-input';
 
 type AddTodoFormProps = {
   onAdd: (todo: Todo) => void;
 };
-
-const FieldInput = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
-  return (<input {...props} />)
-}
 
 export function AddTodoForm({ onAdd }: AddTodoFormProps) {
   const [form, setForm] = useState({
