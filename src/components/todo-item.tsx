@@ -18,7 +18,7 @@ export function TodoItem({ onToggle, todo }: TodoProps) {
   }
 
 	return (
-		<li className={`todo ${completed}`}>
+		<li className={`todo ${completed ? 'completed' : ''}`}>
 			<div>
 				<FieldInput type="checkbox" checked={completed} id={idString} onChange={handleToggle} />
 				<label htmlFor={idString}>

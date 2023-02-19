@@ -35,7 +35,7 @@ export function AddTodoForm({ onAdd }: AddTodoFormProps) {
       tags: convertStringToTags(tags)
     };
     onAdd(todo);
-    
+
     // reset form
     setForm({
       title: '',
@@ -44,8 +44,19 @@ export function AddTodoForm({ onAdd }: AddTodoFormProps) {
   };
 
   return (<form onSubmit={handleSubmit}>
-    <FieldInput name="title" value={form.title} onChange={handleChange} required />
-    <FieldInput name="tags" value={form.tags} onChange={handleChange}/>
+    <FieldInput 
+      name="title" 
+      value={form.title} 
+      placeholder="Something to do..."
+      onChange={handleChange} 
+      required 
+    />
+    <FieldInput 
+      name="tags" 
+      value={form.tags} 
+      placeholder="Tags (comma seperated)"
+      onChange={handleChange}
+    />
     <FieldInput type="submit" value="Add" />
   </form>);
 }

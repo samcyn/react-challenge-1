@@ -27,7 +27,7 @@ li.todo > div {
   font-size: x-large;
 }
 
-li.todo.completed > div {
+li.todo.completed label {
   text-decoration: line-through;
 }
 
