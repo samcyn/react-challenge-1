@@ -1,7 +1,8 @@
 import { useState } from "react";
 import type { Todo } from "./app.types";
 import { AddTodoForm } from "./components/add-todo-form";
-import { TodoItem } from "./components/todo-item";
+import TodoList from "./components/todo-list";
+
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -13,6 +14,8 @@ function App() {
     ]);
   }
 
+  const onToggle = (todo: Todo) => {}
+
   return (
     <>
       <h1>My Todos</h1>
@@ -22,7 +25,8 @@ function App() {
         </article>
       </section>
       <section>
-        <ul>{/* list of todos - implement me */}</ul>
+        {/* list of todos - implement me */}
+        <TodoList todos={todos} onToggle={onToggle} />
       </section>
       <section>
         <h2>Completed</h2>
