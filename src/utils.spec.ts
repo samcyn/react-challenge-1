@@ -31,5 +31,6 @@ describe("convertStringToTags()", () => {
 describe("createId", () => {
   it("should return a number", () => {
     // implement me
+    expect(createId()).toBeTypeOf('number');
   });
 });
