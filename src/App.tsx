@@ -14,7 +14,18 @@ function App() {
     ]);
   }
 
-  const onToggle = (todo: Todo) => {}
+  const onToggle = (todo: Todo) => {
+    const newTodos = todos.map(record => {
+      if(record.id === todo.id) {
+        return {
+          ...record,
+          completed: !todo.completed
+        }
+      }
+      return record;
+    });
+    setTodos(newTodos); 
+  }
 
   return (
     <>
